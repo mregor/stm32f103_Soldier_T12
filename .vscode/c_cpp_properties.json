@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "arm_c_cpp_properties",
+            "compilerPath": "\"/home/egor/arm-tools/gcc-arm-none-eabi/bin/arm-none-eabi-gcc\" -mthumb -mcpu=cortex-m3",
+            "includePath": [
+				"${workspaceRoot}/include",
+				"${workspaceRoot}/src",
+                "${workspaceRoot}/CMSIS/include",
+                "${workspaceRoot}/CMSIS/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "${workspaceRoot}/include",
+                    "${workspaceRoot}/CMSIS",
+                    ""
+                ]
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+			"intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

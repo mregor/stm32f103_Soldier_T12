@@ -1,0 +1,6 @@
+r
+loadbin template.hex, 0x08000000
+verifybin build\testNumber.bin, 0x00
+r
+g
+q

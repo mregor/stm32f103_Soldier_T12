@@ -9,7 +9,6 @@ PA7 - CH2 TIM3 ------
 #ifndef __MAIN_H 
 #define __MAIN_H 
 
-void I2C_Init(void);
 void TIM3_Init(void);
 
 #endif

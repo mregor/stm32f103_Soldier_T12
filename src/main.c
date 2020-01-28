@@ -1,13 +1,12 @@
 #include "stm32f10x.h"
 #include "main.h"
+#include "i2c.h"
 
 int main(void)
 {
-    TIM3_Init();
-    while (1){
-        GPIOC->BSRR |= GPIO_BSRR_BS13;
-        GPIOC->BSRR |= GPIO_BSRR_BR13;
-    }
+    TIM3_Init(); // Настраиваем таймер TIM3 в режиме энкодера
+	I2C_Init(I2C_STANDARD);  // Настраиваем I2C1 как мастер для SH1106
+    while (1){}
 	return 1;
 }
 
@@ -29,8 +28,3 @@ void TIM3_Init()
 	TIM3->CNT = 0;		// Счетчик регистра
 	TIM3->CR1 |= TIM_CR1_CEN;	//Включаем счет TIM3
 }	
-
-void I2C_Init()
-{
-
-}

@@ -40,8 +40,6 @@ void I2C1_Init(I2C_Mode_Type mode)
 
 void I2C1_Start() {
 
-	//while ((I2C1->SR2 & I2C_SR2_BUSY));			// 1: Communication ongoing on the bus
-
 	I2C1->CR1 |= I2C_CR1_START;						// 1: Repeated start generation
 
 	while ( !(I2C1->SR1 & I2C_SR1_SB)  ||			// 0: No Start condition

@@ -4,8 +4,8 @@
 
 int main(void)
 {
-    TIM3_Init(); // Настраиваем таймер TIM3 в режиме энкодера
-	I2C_Init(I2C_STANDARD);  // Настраиваем I2C1 как мастер для SH1106
+    TIM3_Init(); 				// Настраиваем таймер TIM3 в режиме энкодера
+	I2C1_Init(I2C_STANDARD);		// Настраиваем I2C1 как мастер для SH1106 100KHz
     while (1){}
 	return 1;
 }

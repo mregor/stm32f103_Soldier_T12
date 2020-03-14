@@ -1,6 +1,6 @@
 /* Настраиваем следующие ноги:
-PB8 - SCL I2C1 Для экрана
-PB9 - SDA I2C1*/
+PB6 - SCL I2C1 Для экрана
+PB7 - SDA I2C1*/
 #include "stm32f10x.h"
 #include "i2c.h"
 

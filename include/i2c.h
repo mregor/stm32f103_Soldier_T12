@@ -6,8 +6,8 @@ extern "C" {
 #endif /* __cplusplus */
 
 typedef enum {
-	I2C_STANDARD,
-	I2C_FAST
+	I2C_STANDARD,	/*!< Стандартный режим 100 KHz  */
+	I2C_FAST		/*!< Быстрый режим 400 KHz */
 } I2C_Mode_Type;
 
 typedef enum {

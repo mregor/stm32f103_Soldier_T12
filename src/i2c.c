@@ -1,7 +1,6 @@
 /* Настраиваем следующие ноги:
 PB6 - SCL I2C1 Для экрана
 PB7 - SDA I2C1*/
-#include "stm32f10x.h"
 #include "i2c.h"
 
 #define PCLK1_FREQUENCY  (SystemCoreClock / 2)

@@ -5,6 +5,10 @@
 extern "C" {
 #endif /* __cplusplus */
 
+#ifndef __STM32F10x_H
+#include "stm32f10x.h"
+#endif
+
 typedef enum {
 	I2C_STANDARD,	/*!< Стандартный режим 100 KHz  */
 	I2C_FAST		/*!< Быстрый режим 400 KHz */

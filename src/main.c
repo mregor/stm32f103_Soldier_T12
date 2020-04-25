@@ -4,7 +4,6 @@ PB7 - SDA I2C1
 PA6 - CH1 TIM3 Для энкодера
 PA7 - CH2 TIM3 ------
 */
-#include "stm32f10x.h"
 #include "main.h"
 #include "i2c.h"
 

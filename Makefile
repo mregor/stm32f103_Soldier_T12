@@ -1,14 +1,13 @@
 # Имя проекта
 #-------------------------------------------------------------------------------
 TARGET  = template
-ARM_TOOLS_PATH = /home/egor/arm-tools/gcc-arm-none-eabi
 # Инструменты
 #-------------------------------------------------------------------------------
-AS := $(ARM_TOOLS_PATH)/bin/arm-none-eabi-gcc
-CC := $(ARM_TOOLS_PATH)/bin/arm-none-eabi-gcc
-LD := $(ARM_TOOLS_PATH)/bin/arm-none-eabi-gcc
-CP := $(ARM_TOOLS_PATH)/bin/arm-none-eabi-objcopy
-SZ := $(ARM_TOOLS_PATH)/bin/arm-none-eabi-size
+AS := arm-none-eabi-gcc
+CC := arm-none-eabi-gcc
+LD := arm-none-eabi-gcc
+CP := arm-none-eabi-objcopy
+SZ := arm-none-eabi-size
 RM := rm -f
 
 # Пути к CMSIS, StdPeriph Lib

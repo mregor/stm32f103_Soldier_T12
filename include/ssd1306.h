@@ -16,8 +16,7 @@ extern "C" {
 #define I2C_ADDRESS     ((uint8_t)0x3C)
 
 void SSD1306_Init();
-void DataSend();
-void CommandSend();
+void I2C1_SendCommand(uint8_t data);
 
 
 

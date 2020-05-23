@@ -11,7 +11,7 @@ PA7 - CH2 TIM3 ------
 int main(void)
 {
     TIM3_Init(); 					// Настраиваем таймер TIM3 в режиме энкодера
-	I2C1_Init(I2C_STANDARD);		// Настраиваем I2C1 как мастер для SH1106 100KHz
+	I2C1_Init(I2C_FAST);		// Настраиваем I2C1 как мастер для SH1106 100KHz
 	SSD1306_Init();					// Инициализируем дисплей
     while (1)
 	{

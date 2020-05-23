@@ -1,13 +1,14 @@
 #ifndef __I2C_H 
 #define __I2C_H 
 
+#ifndef __STM32F10x_H
+#include "stm32f10x.h"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
-#ifndef __STM32F10x_H
-#include "stm32f10x.h"
-#endif
 
 typedef enum {
 	I2C_STANDARD,	/*!< Стандартный режим 100 KHz  */

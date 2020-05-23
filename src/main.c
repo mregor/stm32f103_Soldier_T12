@@ -6,12 +6,17 @@ PA7 - CH2 TIM3 ------
 */
 #include "main.h"
 #include "i2c.h"
+#include "ssd1306.h"
 
 int main(void)
 {
     TIM3_Init(); 					// Настраиваем таймер TIM3 в режиме энкодера
 	I2C1_Init(I2C_STANDARD);		// Настраиваем I2C1 как мастер для SH1106 100KHz
-    while (1){}
+	SSD1306_Init();					// Инициализируем дисплей
+    while (1)
+	{
+
+	}
 	return 1;
 }
 
@@ -32,4 +37,4 @@ void TIM3_Init()
 	TIM3->ARR = 40;		// До скольки считать
 	TIM3->CNT = 0;		// Счетчик регистра
 	TIM3->CR1 |= TIM_CR1_CEN;	//Включаем счет TIM3
-}	
+}

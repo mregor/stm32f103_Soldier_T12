@@ -13,7 +13,36 @@ int main(void)
     TIM3_Init(); 				// Настраиваем таймер TIM3 в режиме энкодера
 	I2C1_Init(I2C_FAST);		// Настраиваем I2C1 как мастер для SH1106 100KHz
 	I2C1_SSD1306_Init();		// Инициализируем дисплей
-    I2C1_SSD1306_Clear();		// Очищаем дисплей от мусора	
+    I2C1_SSD1306_Clear();		// Очищаем дисплей от мусора
+
+// Рисуем рамку
+    volatile uint8_t i=0, PAGE=0;
+
+    for(PAGE=0; PAGE<8; PAGE++)
+    {
+		I2C1_Start();
+        while (I2C1_SendAddress(I2C_ADDRESS, I2C_TRANSMITTER) == I2C_ERROR) {}
+        I2C1_SSD1306_SendCommand(0x02);  
+        I2C1_SSD1306_SendCommand(0x10);  
+        I2C1_SSD1306_SendCommand(0xB0 | PAGE);  
+        I2C1_SendData(0x40);
+        for(i=0; i<128; i++) 
+	    {
+            if(i==0 || i==127)
+			{
+				I2C1_SendData(0xFF);
+			}
+			else
+			{
+				if(PAGE==0) I2C1_SendData(0x01);
+				if(PAGE==7) I2C1_SendData(0x80);
+				if(PAGE>0 && PAGE<7) I2C1_SendData(0x00);
+			}
+	    }
+        I2C1_Stop();
+    }    
+// Рамка
+
     while (1)
 	{
 

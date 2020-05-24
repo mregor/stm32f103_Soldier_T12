@@ -22,7 +22,7 @@ void I2C1_SSD1306_Init()
 void I2C1_SSD1306_SendCommand(uint8_t data)
 {
 
-	I2C1->DR = 0x80U;
+	I2C1->DR = 0x80;
 
 	while ( !(I2C1->SR1 & I2C_SR1_BTF)  ||			// 0: Data byte transfer not done
 			!(I2C1->SR1 & I2C_SR1_TXE)  ||			// 0: Data register not empty

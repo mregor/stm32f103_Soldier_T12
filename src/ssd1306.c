@@ -17,8 +17,6 @@ void I2C1_SSD1306_Init()
     I2C1_SSD1306_SendCommand(0x40);    
     I2C1_SSD1306_SendCommand(0xAF);        
     I2C1_Stop();
-
-    I2C1_SSD1306_Clear();
 }
 
 void I2C1_SSD1306_SendCommand(uint8_t data)

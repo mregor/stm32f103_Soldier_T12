@@ -14,7 +14,8 @@ void I2C1_SSD1306_Init()
     I2C1_SSD1306_SendCommand(0x12);    
     I2C1_SSD1306_SendCommand(0xD3);    
     I2C1_SSD1306_SendCommand(0x00);    
-    I2C1_SSD1306_SendCommand(0x40);    
+    I2C1_SSD1306_SendCommand(0x40);  
+    I2C1_SSD1306_SendCommand(0xC8);  
     I2C1_SSD1306_SendCommand(0xAF);        
     I2C1_Stop();
 }
@@ -55,6 +56,28 @@ void I2C1_SSD1306_Clear()
 	    {
             I2C1_SendData(0x00);
 	    }
+        I2C1_Stop();
+    }    
+}
+
+void DrawThermometre(uint8_t column, uint8_t page)
+{
+    uint8_t num = 0, column_low = 0, column_high = 0;
+    column_low = (column & 0x0F) + 2;
+    column_high = 0x10 | (column >> 4);
+    for(int i = 0; i < 3; i++)
+    {
+		I2C1_Start();
+        while (I2C1_SendAddress(I2C_ADDRESS, I2C_TRANSMITTER) == I2C_ERROR) {}
+        I2C1_SSD1306_SendCommand(column_low);  
+        I2C1_SSD1306_SendCommand(column_high);  
+        I2C1_SSD1306_SendCommand(0xB0 | (page + i));  
+        I2C1_SendData(0x40);
+        for(int j=0; j<16; j++) 
+	    {
+			I2C1_SendData(thermometer[num]);
+            num++;
+		}
         I2C1_Stop();
     }    
 }

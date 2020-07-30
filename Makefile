@@ -48,6 +48,7 @@ LDSCRIPT   = STM32F103XB_FLASH.ld
 # Настройки линкера
 #-------------------------------------------------------------------------------
 LDFLAGS += -nostartfiles
+LDFLAGS += -Wl,--print-memory-usage 
 LDFLAGS += -T$(LDSCR_PATH)/$(LDSCRIPT)
 
 # Настройки ассемблера
